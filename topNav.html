@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=375,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/topNav.css" />
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_2001586_2e1l710jiw6.css" />
+	</head>
+	<body>
+		<div class="navPage">
+			
+			<div class="topTitle">
+				<img src="img/back.png" onclick="slideBack()">
+				<span>变更地点</span>
+			</div>
+			<div class="content">
+				<div class="searchInput">
+					<input type="text" name="" id="" value="" />
+					<i class="iconfont icon-icon-test"></i>
+				</div>
+				<div id="nowPos">
+					<div class="posTitle">
+						<span>当前位置</span>
+					</div>
+					<div class="nowPos">
+						<i class="iconfont icon-weizhi"></i>
+						<span>鼓楼</span>
+					</div>
+				</div>
+				<div id="hotCity">
+					<div class="posTitle">
+						<span>热门城市</span>
+					</div>
+					<div class="row">
+						<div class="cityItem">
+							北京市
+						</div>
+						<div class="cityItem">
+							上海市
+						</div>
+						<div class="cityItem">
+							武汉市
+						</div>
+					</div>
+					<div class="row">
+						<div class="cityItem">
+							重庆市
+						</div>
+						<div class="cityItem">
+							西安市
+						</div>
+						<div class="cityItem">
+							南京市
+						</div>
+					</div>
+					<div class="row">
+						<div class="cityItem">
+							拉萨市
+						</div>
+						<div class="cityItem">
+							郑州市
+						</div>
+						<div class="cityItem">
+							成都市
+						</div>
+					</div>
+					<div class="row">
+						<div class="cityItem">
+							沈阳市
+						</div>
+						<div class="cityItem">
+							深圳市
+						</div>
+						<div class="cityItem">
+							天津市
+						</div>
+					</div>
+					<div class="row">
+						<div class="cityItem">
+							杭州市
+						</div>
+						<div class="cityItem">
+							呼和浩特市
+						</div>
+						<div class="cityItem">
+							长春市
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button type="button" onclick="slide()">点击展开</button>
+	</body>
+	
+	<script type="text/javascript">
+		function slide(){
+			nav = document.querySelector('.navPage')
+			nav.className = ("navPage active")
+		}
+		function slideBack(){
+			nav = document.querySelector('.navPage.active')
+			nav.className = ("navPage")
+		}
+	</script>
+</html>

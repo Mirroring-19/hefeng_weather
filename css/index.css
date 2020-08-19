@@ -1,0 +1,261 @@
+/* 通用设置开始 */
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+
+	font-size: 14px;
+	background-color: #323F4B
+}
+/* 通用设置结束 */
+
+/* 头部信息开始 */
+#headInfo{
+	height: 3.2rem;
+	color: white;
+}
+#headInfo .topNav{
+	height: .4rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: .05rem .15rem;
+}
+#headInfo #updateTime{
+	font-size: 12px;
+}
+#mainContent{
+	padding: .8rem .1rem .3rem .1rem;
+
+}
+#mainContent #temp{
+	font-size: .5rem;
+	font-weight: 400;
+	margin-top: .1rem;
+	margin-bottom: .1rem;
+}
+#mainContent #text{
+	font-size: .22rem;
+	font-weight: 400;
+}
+#mainContent i{
+	font-size: .22rem;
+	font-weight: 400;
+}
+#mainContent #aqi{
+	font-size: .14rem;
+	margin-top: .1rem;
+	width: .55rem;
+	height: .13rem;
+	padding: .03rem .08rem .03rem .065rem;
+	line-height: .13rem;
+	border-radius: .05rem;
+	background-color: hsla(0,0%,100%,.12);
+}
+#mainContent #aqi .aqi{
+	color: #90C76F;
+}
+/* 头部信息结束 */
+/* 底部信息开始 */
+#baseinfo{	
+	display: flex;
+	padding: .08rem 0;
+	justify-content: space-around;
+	text-align: center;
+	font-size: .14rem;
+	color: white;
+}
+#baseinfo>div>div{
+	padding: .04rem;
+}
+#baseinfo .title{
+	color:#FFFFFFBB
+}
+#baseinfo .content{
+}
+/* 底部信息结束 */
+/* 预警列表开始 */
+#alarmlist li{
+	border-bottom: 1px solid hsla(0,0%,100%,.27);
+	color: white;
+}
+#alarmlist #summary{
+	/* display: flex; */
+	height: .12rem;
+	padding: .13rem .1rem;
+	line-height: .12rem;
+}
+#alarmlist #summary .summary{
+	margin-left: .1rem;
+	font-size: .12rem;
+}
+#alarmlist #summary img{
+	height: .13rem;
+	float: right;
+}
+#alarmlist .alarmItem{
+	/* display: flex; */
+	height: .12rem;
+	padding: .13rem .1rem;
+	line-height: .12rem;
+}
+#alarmlist .alarmItem .alarm{
+	margin-left: .1rem;
+	font-size: .12rem;
+}
+#alarmlist .alarmItem img{
+	height: .13rem;
+	float: right;
+}
+/* 预警列表结束 */
+/* 24小时预报开始 */
+#hour{
+	color: white;
+}
+#hour .title{
+	height: .12rem;
+	padding: .13rem .1rem;
+	line-height: .12rem;
+	border-bottom: 1px solid hsla(0,0%,100%,.27);
+	font-size: .14rem;
+}
+#hour .content{
+	display: flex;
+	justify-content: space-around;
+	padding: .1rem 0;
+	/* line-height: .7rem; */
+}
+#hour .content .item{
+	/* width: .46875rem; */
+	text-align: center;
+	/* height: .7rem; */
+}
+#hour .content .item #hourtime{
+	margin-bottom:.05rem;
+}
+#hour .content .item #temp{
+	margin-top:.05rem;
+}
+#hour .content .item #hourtime::after{
+	content: "时";
+}
+#hour .content .item #temp::after{
+	content: "°";
+}
+#hour .content .item>div{
+	font-size: .12rem;
+}
+
+/* 24小时预报结束 */
+
+/* 七天预报开始 */
+#senven-day{
+	width: 100%;
+	position: relative;
+}
+#senven-day .title{
+	padding: .1rem .1rem;
+	color: #FFFFFF;
+	border-bottom: 1px solid hsla(0,0%,100%,.27);
+}
+#senven-day .content{
+	height: 2.5rem;
+	display: flex;
+	color: white;
+	padding-top: .1rem;
+}
+#senven-day .content .contentItem{
+	flex: 1;
+	font-size: 12px;
+	text-align: center;
+	border-right:1px dashed hsla(0,0%,100%,.27) ;
+}
+#senven-day .content .contentItem:nth-child(1){
+	color: rgb(255, 212, 58);
+}
+#senven-day .content .contentItem .nightIcon{
+	margin-top: 1.3rem;
+	margin-bottom: .05rem;
+}
+#senven-day .content .contentItem .date{
+	margin-bottom: .05rem;
+	font-size: 10px;
+}
+#senven-day .content .contentItem .week{
+	margin-bottom: .05rem;
+	font-size: 10px;
+}
+#senven-day .content .contentItem .dir{
+	margin-bottom: .05rem;
+	font-size: 10px;
+}
+#senven-day .content .contentItem .lvl{
+	font-size: 8px;
+}
+#senven-day #svgGraph{
+	position: absolute;
+	top:1rem;
+	background-color: transparent;
+	height: 1.3rem;
+	width: 100vw;
+}
+#senven-day #svgGraph svg{
+	fill: #FFFFFF;
+}
+#senven-day #svgGraph svg circle:nth-child(2){
+	fill:rgb(255, 212, 58);
+	r:4;
+}
+/* 七天预报结束 */
+
+/* 30天预报开始 */
+#thirty-day{
+	height: .2rem;
+	padding: .1rem 0;
+	line-height: .2rem;
+	font-size: .14rem;
+	border-top: 1px solid hsla(0,0%,100%,.27);
+	border-bottom: 1px solid hsla(0,0%,100%,.27);
+	text-align: center;
+	color: hsla(0,0%,100%,.27);;
+}
+#thirty-day img{
+	height: .10rem;
+}
+/* 30天预报结束 */
+
+/* 生活指数开始 */
+#life-point .title{
+	padding: .1rem .1rem;
+	color: #FFFFFF;
+}
+#life-point .content{
+	width: 100%;
+}
+#life-point .content table{
+	border-left: 1px solid hsla(0,0%,100%,.27);
+	border-top: 1px solid hsla(0,0%,100%,.27);
+	color: #FFFFFF;
+	width: 100vw;
+	border-spacing: 0;
+}
+#life-point .content table tr{
+	width: 100vw;
+	height: .5rem;
+}
+#life-point .content table td{
+	width: 33.33%;
+	border-right: 1px solid hsla(0,0%,100%,.27);
+	border-bottom: 1px solid hsla(0,0%,100%,.27);
+	padding: .2rem .25rem .12rem .25rem;
+	text-align: center;
+}
+#life-point .content table td div:nth-child(1){
+	margin-bottom:.05rem ;
+}
+#life-point .content table td img{
+	height: .1rem;
+}
+
+/* 生活指数结束 */

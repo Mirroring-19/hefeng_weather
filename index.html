@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/topNav.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_2001586_2e1l710jiw6.css" /> -->
+		<style type="text/css">
+			.icon {
+				width: 1em;
+				height: 1em;
+				vertical-align: -0.15em;
+				fill: currentColor;
+				overflow: hidden;
+			}
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<!-- 头部展示开始 -->
+		<div id="headInfo">
+			<!-- 顶部导航 -->
+			<div class="topNav">
+				<div id="positon" onclick="slide()">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-weizhi"></use>
+					</svg>
+					<span>鼓楼</span>
+				</div>
+				<div id="updateTime">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-shuaxin"></use>
+					</svg>
+					<span>刚刚更新</span>
+				</div>
+			</div>
+			<!-- 顶部导航结束 -->
+
+			<!-- 顶部导航页开始 -->
+			<div class="navPage">
+				<div class="topTitle">
+					<img src="img/back.png" onclick="slideBack()">
+					<span>变更地点</span>
+				</div>
+				<div class="searchContent">
+					<div class="searchInput">
+						<input type="text" name="" id="searchInput" value="" />	
+					</div>
+				</div>
+				<div class="content1">
+					<div id="nowPos">
+						<div class="posTitle">
+							<span>当前位置</span>
+						</div>
+						<div class="nowPos">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="#icon-weizhi"></use>
+							</svg>
+							<span>鼓楼</span>
+						</div>
+					</div>
+					<div id="hotCity">
+						<div class="posTitle">
+							<span>热门城市</span>
+						</div>
+						<div class="row">
+							<div class="cityItem" onclick="searchCity('北京','北京')">
+								北京市
+							</div>
+							<div class="cityItem" onclick="searchCity('上海','上海')">
+								上海市
+							</div>
+							<div class="cityItem" onclick="searchCity('武汉','武汉')">
+								武汉市
+							</div>
+						</div>
+						<div class="row">
+							<div class="cityItem" onclick="searchCity('重庆','重庆')">
+								重庆市
+							</div>
+							<div class="cityItem" onclick="searchCity('西安','西安')">
+								西安市
+							</div>
+							<div class="cityItem" onclick="searchCity('南京','南京')">
+								南京市
+							</div>
+						</div>
+						<div class="row">
+							<div class="cityItem" onclick="searchCity('拉萨','拉萨')">
+								拉萨市
+							</div>
+							<div class="cityItem" onclick="searchCity('郑州','郑州')">
+								郑州市
+							</div>
+							<div class="cityItem" onclick="searchCity('成都','成都')">
+								成都市
+							</div>
+						</div>
+						<div class="row">
+							<div class="cityItem" onclick="searchCity('沈阳','沈阳')">
+								沈阳市
+							</div>
+							<div class="cityItem" onclick="searchCity('深圳','深圳')">
+								深圳市
+							</div>
+							<div class="cityItem" onclick="searchCity('天津','天津')">
+								天津市
+							</div>
+						</div>
+						<div class="row">
+							<div class="cityItem" onclick="searchCity('杭州','杭州')">
+								杭州市
+							</div>
+							<div class="cityItem" onclick="searchCity('呼和浩特','呼和浩特')">
+								呼和浩特市
+							</div>
+							<div class="cityItem" onclick="searchCity('长春','长春')">
+								长春市
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="content2" hidden="hidden">
+					<div id="searcityList">
+						<ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 顶部导航页结束 -->
+
+			<!-- 主要内容 -->
+			<div id="mainContent">
+				<div id="temp">
+					<span></span>
+				</div>
+				<div id="text">
+					<svg class="icon" aria-hidden="true">
+					
+					</svg>
+					<span></span>
+				</div>
+				<div id="aqi">
+					<span class="category"></span> <span class="aqi"></span> >
+				</div>
+			</div>
+		</div>
+		<!-- 头部展示结束 -->
+
+		<!-- 底部信息展示开始 -->
+		<div id="baseinfo">
+			<!-- 降水信息 mm-->
+			<div id="precip">
+				<div class="title">降水</div>
+				<div class="content">0.0mm</div>
+			</div>
+			<!-- 湿度信息 %-->
+			<div id="humidity">
+				<div class="title">湿度</div>
+				<div class="content">0.0mm</div>
+			</div>
+			<!-- 风力信息 级-->
+			<div id="wind">
+				<div class="title"></div>
+				<div class="content">0.0mm</div>
+			</div>
+			<!-- 气压信息 hpa-->
+			<div id="pressure">
+				<div class="title">气压</div>
+				<div class="content">0.0mm</div>
+			</div>
+		</div>
+		<!-- 底部信息展示结束 -->
+
+		<!-- 预警列表开始 -->
+		<div id="alarmlist">
+			<ul>
+				
+			</ul>
+		</div>
+		<!-- 预警列表结束 -->
+
+		<!-- 24小时预报开始 -->
+		<div id="hour">
+			<div class="title">24小时预报</div>
+			<div class="content">
+			</div>
+		</div>
+		<!-- 24小时预报结束 -->
+		
+		<!-- 七天预报开始 -->
+		<div id="senven-day">
+			<div class="title">
+				<span>7天预报</span>
+			</div>
+			<div class="content">
+
+			</div>
+			<div id="svgGraph">
+				<svg width="375" height="130">
+					<g id="top"></g>
+					<g id="bottom"></g>
+				</svg>
+			</div>
+		</div>
+		<!-- 七天预报结束 -->
+		
+		<!-- 三十天预报开始 -->
+		<div id="thirty-day">
+			<span>30日天气预报</span>
+			<img src="img/aqi-right.png" >
+		</div>
+		<!-- 三十天预报结束 -->
+		
+		<!-- 生活指数开始 -->
+		<div id="life-point">
+			<div class="title">
+				<span>生活指数</span>
+			</div>
+			<div class="content">
+				<table>
+					<tr>
+					</tr>
+					<tr>
+					</tr>
+					<tr>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!-- 生活指数结束 -->
+		
+		<!-- Js引入部分 -->
+		<script src="//at.alicdn.com/t/font_2001586_3o46nr40y97.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/svgIcon.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/background-img.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/hefengAPI.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+</html>

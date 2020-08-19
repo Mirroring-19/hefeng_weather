@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="city" value="" />
+		<button type="button" onclick="getData()">submit</button>
+		<script src="js/Ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function getData() {
+				var city = "北京"
+				var adm = "北京"
+				var httpUrlCity = "https://geoapi.heweather.net/v2/city/lookup?location=" + city +
+					"&key=98788a6050f24be1b4226f2fa11ae746&adm="+adm
+
+				getAjax(httpUrlCity, function(res) {
+					resJSON = JSON.parse(res.response)
+					// console.log(resJSON)
+					console.log(cityID = resJSON.location[0])
+					cityID = resJSON.location[0].id
+					lon = resJSON.location[0].lon
+					lat = resJSON.location[0].lat
+					var httpUrl = "https://devapi.heweather.net/v7/weather/now?location=" + cityID +
+						"&key=98788a6050f24be1b4226f2fa11ae746"
+
+					var alarm = "https://devapi.heweather.net/v7/warning/now?location=" + cityID +
+						"&key=98788a6050f24be1b4226f2fa11ae746"
+
+					var h24 = "https://devapi.heweather.net/v7/weather/24h?location=" + cityID +
+						"&key=98788a6050f24be1b4226f2fa11ae746"
+					
+					var lp = "https://devapi.heweather.net/v7/indices/1d?location=" + cityID +
+					"&type=0&key=98788a6050f24be1b4226f2fa11ae746"
+					//当前分钟级降水API
+					var m5 = "https://devapi.heweather.net/v7/minutely/5m?location=116.41,39.92&key=98788a6050f24be1b4226f2fa11ae746"
+					var d7 = "https://devapi.heweather.net/v7/weather/7d?location=" + cityID + "&key=98788a6050f24be1b4226f2fa11ae746"
+					getAjax(m5, function(res) {
+						let resJSON = JSON.parse(res.response)
+						console.log(resJSON)
+						
+					})
+				})
+			}
+			 function getWeek(dateString) {
+			        var dateArray = dateString.split("-");
+			        date = new Date(dateArray[0], parseInt(dateArray[1] - 1), dateArray[2]);
+			        return "周" + "日一二三四五六".charAt(date.getDay());
+			    };
+			getData()
+			var riqi = getWeek("2020-8-18")
+			console.log(riqi)
+		</script>
+	</body>
+</html>
