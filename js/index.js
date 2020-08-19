@@ -30,7 +30,7 @@ function changeBGImg(weather){
 	let bgUrl = "url("+bgimg[''+weather+'']+")"
 	let bgColor = bgcolor[''+weather+'']
 	let body = document.querySelector('body')
-	console.log(bgUrl,bgColor)
+	// console.log(bgUrl,bgColor)
 	body.style.background = bgUrl + "no-repeat"
 	body.style.backgroundSize = "100% auto"
 	body.style.backgroundColor = bgColor
@@ -42,11 +42,11 @@ var flag = true;
 //防止中文输入法多次查询
 search.addEventListener("compositionstart", function() {
 	flag = false;
-	console.log('输入开始')
+	// console.log('输入开始')
 })
 search.addEventListener("compositionend", function() {
 	flag = true;
-	console.log('输入结束')
+	// console.log('输入结束')
 })
 
 // 监听展开菜单中input的值变化实现动态查询
@@ -73,7 +73,7 @@ search.addEventListener("input", function(e) {
 				"&key=98788a6050f24be1b4226f2fa11ae746&range=cn"
 
 			getAjax(httpUrlCity, function(res) {
-				console.log('开始查询')
+				// console.log('开始查询')
 				resJSON = JSON.parse(res.response)
 				let cities = resJSON.location;
 				

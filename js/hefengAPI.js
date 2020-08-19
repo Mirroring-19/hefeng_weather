@@ -21,7 +21,7 @@ function getData(city,adm) {
 		//当前空气质量API
 		var httpUrlAirNow = "https://devapi.heweather.net/v7/air/now?location=" + cityID + 
 			"&key=98788a6050f24be1b4226f2fa11ae746"
-		//当前分钟级降水API（该API目前无法获得数据，返回403）
+		//当前分钟级降水API（
 		var httpUrlMinutely5m = "https://devapi.heweather.net/v7/minutely/5m?location=" + lon+","+lat + 
 			"&key=98788a6050f24be1b4226f2fa11ae746"
 		//获取24小时天气API
@@ -110,11 +110,18 @@ function getData(city,adm) {
 		getAjax(httpUrlMinutely5m, function(res) {
 			let resJSON = JSON.parse(res.response)
 			let data = resJSON;
-			// console.log(data)
-			//获取分钟降水描述并展示
-			// let summaryData = document.querySelector('#alarmlist #summary .summary')
-			// summaryData.innerHTML = data.summary;
-			
+			console.log(data)
+			// 获取分钟降水描述并展示
+			let summaryData = document.querySelector('#alarmlist ul')
+			summaryData.innerHTML=`
+			<li id="summary">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-ditu"></use>
+				</svg>
+				<span class="summary">`+data.summary+`</span>
+				<img src="img/aqi-right.png">
+			</li>
+			`
 		})
 		
 		//Ajax根据城市ID获取每小时天气并展示最近八小时
@@ -160,15 +167,7 @@ function getData(city,adm) {
 			let warning = resJSON.warning;
 			
 			let alarmItem = document.querySelector("#alarmlist ul")
-			alarmItem.innerHTML=`
-			<li id="summary">
-				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#icon-ditu"></use>
-				</svg>
-				<span class="summary">未来两小时无降水</span>
-				<img src="img/aqi-right.png">
-			</li>
-			`
+
 		
 			warning.forEach(function(item,i){
 				alarmItem.innerHTML+=`
