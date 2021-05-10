@@ -20,6 +20,7 @@
 					// console.log(resJSON)
 					console.log(cityID = resJSON.location[0])
 					cityID = resJSON.location[0].id
+					console.log(cityID)
 					lon = resJSON.location[0].lon
 					lat = resJSON.location[0].lat
 					var httpUrl = "https://devapi.heweather.net/v7/weather/now?location=" + cityID +

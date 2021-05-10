@@ -110,7 +110,7 @@ function getData(city,adm) {
 		getAjax(httpUrlMinutely5m, function(res) {
 			let resJSON = JSON.parse(res.response)
 			let data = resJSON;
-			console.log(data)
+			// console.log(data)
 			// 获取分钟降水描述并展示
 			let summaryData = document.querySelector('#alarmlist ul')
 			summaryData.innerHTML=`
